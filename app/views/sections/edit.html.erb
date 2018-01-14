@@ -1,0 +1,14 @@
+<%= link_to("<< Back to list", sections_path, :class => 'back-link')%>
+<div class= "sections edit">
+  <h2> Update Section </h2>
+
+  <%= form_for(@section) do |f| %>
+
+  <%= render(:partial => 'form', :locals => {:f => f})%>
+
+</div>
+
+  <div class= "form-buttons">
+    <%= f.submit("Update Section")%>
+  </div>
+  <%end%>

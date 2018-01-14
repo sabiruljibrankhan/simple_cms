@@ -1,0 +1,14 @@
+<%= link_to("<< Back to list", pages_path, :class => 'back-link')%>
+<div class= "pages new">
+  <h2> Create Page </h2>
+
+  <%= form_for(@page) do |f| %>
+
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+</div>
+
+  <div class= "form-buttons">
+    <%= f.submit("Create Page")%>
+  </div>
+  <%end%>
