@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180106194247) do
+ActiveRecord::Schema.define(version: 20180114180754) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "first_name", limit: 25
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(version: 20180106194247) do
     t.boolean "visible", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "email"
+    t.string "password_hash"
+    t.string "password_salt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "security_question", null: false
   end
 
 end

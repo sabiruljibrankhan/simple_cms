@@ -9,6 +9,29 @@
   </head>
 
   <body>
-    <%= yield %>
+ <div id="main">
+  	<% flash.each do |name, msg| %>
+    	<%= content_tag :div, msg, :id => "flash#{name}" %>
+  	<% end %>
+
+
+	<div id="user_nav">
+	  <% if current_user %>
+	    Logged in as <%= current_user.email %>
+	    <%= link_to "Log out", log_out_path %>
+	  <% else %>
+	    <%= link_to "Sign up", sign_up_path %> or 
+	    <%= link_to "Log in", log_in_path %> or
+	    <%= link_to "Forgot Password", change_password_path %>
+	  <% end %>
+	</div>
+
+	<div id="content">
+        <%= yield %>
+    </div>
+    </div>
+   <div id="footer">
+     <p id="copyright">&copy; SJK.com</p>
+   </div>
   </body>
 </html>

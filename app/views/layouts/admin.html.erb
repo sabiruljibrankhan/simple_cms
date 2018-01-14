@@ -5,6 +5,15 @@
     <%= stylesheet_link_tag('admin', :media => 'all')%>
   </head>
   <body>
+    <div id="user_nav">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>
+      <%= link_to "Log out", log_out_path %>
+    <% else %>
+      <%= link_to "Sign up", sign_up_path %> or 
+      <%= link_to "Log in", log_in_path %>
+    <% end %>
+  </div>
 
     <div id="header">
       <h1>Simple CMS Admin</h1>
